@@ -5,22 +5,21 @@ import '../components/mytextwedget.dart';
 import '../components/mywedget.dart';
 import '../main.dart';
 
-class TvScreen extends StatefulWidget {
-  const TvScreen({super.key});
+class Phone extends StatefulWidget {
+  const Phone({super.key});
 
   @override
-  State<TvScreen> createState() => _TvScreenState();
+  State<Phone> createState() => _PhoneState();
 }
 
-class _TvScreenState extends State<TvScreen> {
+class _PhoneState extends State<Phone> {
   String MyGroupVal = "";
   bool MyVal = false;
   bool myval = false;
   List MyListItem = ["1", "2", "3", "4"];
   String SelectedItem = "1";
-  final VideoURL = "https://www.youtube.com/watch?v=r5O9XkSWWsU";
+  final VideoURL = "https://www.youtube.com/watch?v=RfEuBb8MFZg";
   late YoutubePlayerController _controller;
-
   @override
   void initState() {
     final VideoID = YoutubePlayer.convertUrlToId(VideoURL);
@@ -29,6 +28,7 @@ class _TvScreenState extends State<TvScreen> {
     YoutubePlayerFlags(
       autoPlay: false,
     );
+
     super.initState();
   }
 
@@ -38,8 +38,9 @@ class _TvScreenState extends State<TvScreen> {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 0, 156, 161),
         title: Text(
-          "TV SCREEN",
-          style: TextStyle(fontFamily: "DancingScript-VariableFont_wght"),
+          "SAMSUNG PHONE",
+          style: TextStyle(
+              fontFamily: "DancingScript-VariableFont_wght", fontSize: 40),
         ),
       ),
       body: Container(
@@ -55,7 +56,7 @@ class _TvScreenState extends State<TvScreen> {
             MyText(
               MyFontFamily: "Combo-Regular",
               MyTextSize: 40,
-              MyTextt: "SAMSUNG TV",
+              MyTextt: "SAMSUNG WASHING MACHINE",
             ),
             SizedBox(
               height: 20,
@@ -70,7 +71,7 @@ class _TvScreenState extends State<TvScreen> {
               controller: _controller,
               showVideoProgressIndicator: true,
               onReady: () {
-                print("im ready");
+                print("IM READY");
               },
               bottomActions: [
                 CurrentPosition(),
@@ -81,16 +82,16 @@ class _TvScreenState extends State<TvScreen> {
                       bufferedColor: Colors.greenAccent,
                       handleColor: Colors.black,
                       playedColor: Colors.blueGrey),
-                ),
+                )
               ],
             ),
             SizedBox(
-              height: 20,
+              height: 30,
             ),
             MyContainer(
               OnTap: () {},
               images:
-                  "https://thegadgetflow.com/wp-content/uploads/2022/03/Samsung-2022-Neo-QLED-Series-01.jpg",
+                  "https://www.zdnet.com/a/img/resize/301f95f0f1547f243815f281401ec34594994727/2022/08/10/a65a3bd5-e3fa-4899-86ba-b1a855e2774d/samsung-galaxy-z-flip-4-review-best-samsung-phone.jpg?width=1200&fit=bounds&auto=webp",
             ),
             SizedBox(
               height: 20,
@@ -125,16 +126,42 @@ class _TvScreenState extends State<TvScreen> {
                 });
               },
             ),
+            RadioListTile(
+              title: Text(
+                "purpel",
+                style: TextStyle(fontSize: 20),
+              ),
+              value: "val",
+              groupValue: MyGroupVal,
+              onChanged: (value) {
+                setState(() {
+                  MyGroupVal = value.toString();
+                });
+              },
+            ),
+            RadioListTile(
+              title: Text(
+                "gold",
+                style: TextStyle(fontSize: 20),
+              ),
+              value: "va",
+              groupValue: MyGroupVal,
+              onChanged: (value) {
+                setState(() {
+                  MyGroupVal = value.toString();
+                });
+              },
+            ),
             Divider(
               height: 20,
             ),
             MyText(
                 MyFontFamily: "Combo-Regular",
                 MyTextSize: 40,
-                MyTextt: "Choose Screen Size :"),
+                MyTextt: "Choose the Size of memory :"),
             CheckboxListTile(
               title: Text(
-                "Size 55 inch",
+                "Size 128 Gp",
                 style: TextStyle(fontSize: 20),
               ),
               value: MyVal,
@@ -146,7 +173,7 @@ class _TvScreenState extends State<TvScreen> {
             ),
             CheckboxListTile(
               title: Text(
-                "Size 77 inch",
+                "Size 256 Gp",
                 style: TextStyle(fontSize: 20),
               ),
               value: myval,

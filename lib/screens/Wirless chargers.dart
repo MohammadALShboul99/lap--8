@@ -5,22 +5,21 @@ import '../components/mytextwedget.dart';
 import '../components/mywedget.dart';
 import '../main.dart';
 
-class TvScreen extends StatefulWidget {
-  const TvScreen({super.key});
+class WirlwssCHargers extends StatefulWidget {
+  const WirlwssCHargers({super.key});
 
   @override
-  State<TvScreen> createState() => _TvScreenState();
+  State<WirlwssCHargers> createState() => _WirlwssCHargersState();
 }
 
-class _TvScreenState extends State<TvScreen> {
+class _WirlwssCHargersState extends State<WirlwssCHargers> {
   String MyGroupVal = "";
   bool MyVal = false;
   bool myval = false;
   List MyListItem = ["1", "2", "3", "4"];
   String SelectedItem = "1";
-  final VideoURL = "https://www.youtube.com/watch?v=r5O9XkSWWsU";
+  final VideoURL = "https://www.youtube.com/watch?v=dM2olgy3zkQ";
   late YoutubePlayerController _controller;
-
   @override
   void initState() {
     final VideoID = YoutubePlayer.convertUrlToId(VideoURL);
@@ -29,6 +28,7 @@ class _TvScreenState extends State<TvScreen> {
     YoutubePlayerFlags(
       autoPlay: false,
     );
+
     super.initState();
   }
 
@@ -38,8 +38,9 @@ class _TvScreenState extends State<TvScreen> {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 0, 156, 161),
         title: Text(
-          "TV SCREEN",
-          style: TextStyle(fontFamily: "DancingScript-VariableFont_wght"),
+          "SAMSUNG WIRLESS CHARGER",
+          style: TextStyle(
+              fontFamily: "DancingScript-VariableFont_wght", fontSize: 20),
         ),
       ),
       body: Container(
@@ -55,7 +56,7 @@ class _TvScreenState extends State<TvScreen> {
             MyText(
               MyFontFamily: "Combo-Regular",
               MyTextSize: 40,
-              MyTextt: "SAMSUNG TV",
+              MyTextt: "SAMSUNG WIRLESS CHARGER",
             ),
             SizedBox(
               height: 20,
@@ -70,7 +71,7 @@ class _TvScreenState extends State<TvScreen> {
               controller: _controller,
               showVideoProgressIndicator: true,
               onReady: () {
-                print("im ready");
+                print("IM READY");
               },
               bottomActions: [
                 CurrentPosition(),
@@ -81,16 +82,16 @@ class _TvScreenState extends State<TvScreen> {
                       bufferedColor: Colors.greenAccent,
                       handleColor: Colors.black,
                       playedColor: Colors.blueGrey),
-                ),
+                )
               ],
             ),
             SizedBox(
-              height: 20,
+              height: 30,
             ),
             MyContainer(
               OnTap: () {},
               images:
-                  "https://thegadgetflow.com/wp-content/uploads/2022/03/Samsung-2022-Neo-QLED-Series-01.jpg",
+                  "https://images.samsung.com/is/image/samsung/uk-feature-keep-watching-while-you-charge-278254194?\$FB_TYPE_A_MO_JPG\$",
             ),
             SizedBox(
               height: 20,
@@ -131,10 +132,10 @@ class _TvScreenState extends State<TvScreen> {
             MyText(
                 MyFontFamily: "Combo-Regular",
                 MyTextSize: 40,
-                MyTextt: "Choose Screen Size :"),
+                MyTextt: "Choose speed of charging :"),
             CheckboxListTile(
               title: Text(
-                "Size 55 inch",
+                "manual speed",
                 style: TextStyle(fontSize: 20),
               ),
               value: MyVal,
@@ -146,7 +147,7 @@ class _TvScreenState extends State<TvScreen> {
             ),
             CheckboxListTile(
               title: Text(
-                "Size 77 inch",
+                "fast charging  ",
                 style: TextStyle(fontSize: 20),
               ),
               value: myval,

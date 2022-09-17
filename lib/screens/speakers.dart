@@ -5,22 +5,21 @@ import '../components/mytextwedget.dart';
 import '../components/mywedget.dart';
 import '../main.dart';
 
-class TvScreen extends StatefulWidget {
-  const TvScreen({super.key});
+class Speakers extends StatefulWidget {
+  const Speakers({super.key});
 
   @override
-  State<TvScreen> createState() => _TvScreenState();
+  State<Speakers> createState() => _SpeakersState();
 }
 
-class _TvScreenState extends State<TvScreen> {
+class _SpeakersState extends State<Speakers> {
   String MyGroupVal = "";
   bool MyVal = false;
   bool myval = false;
   List MyListItem = ["1", "2", "3", "4"];
   String SelectedItem = "1";
-  final VideoURL = "https://www.youtube.com/watch?v=r5O9XkSWWsU";
+  final VideoURL = "https://www.youtube.com/watch?v=NlVCWD7o5Yo";
   late YoutubePlayerController _controller;
-
   @override
   void initState() {
     final VideoID = YoutubePlayer.convertUrlToId(VideoURL);
@@ -29,6 +28,7 @@ class _TvScreenState extends State<TvScreen> {
     YoutubePlayerFlags(
       autoPlay: false,
     );
+
     super.initState();
   }
 
@@ -38,8 +38,9 @@ class _TvScreenState extends State<TvScreen> {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 0, 156, 161),
         title: Text(
-          "TV SCREEN",
-          style: TextStyle(fontFamily: "DancingScript-VariableFont_wght"),
+          "SAMSUNG SPEAKER",
+          style: TextStyle(
+              fontFamily: "DancingScript-VariableFont_wght", fontSize: 30),
         ),
       ),
       body: Container(
@@ -55,7 +56,7 @@ class _TvScreenState extends State<TvScreen> {
             MyText(
               MyFontFamily: "Combo-Regular",
               MyTextSize: 40,
-              MyTextt: "SAMSUNG TV",
+              MyTextt: "SAMSUNG SPEAKERS",
             ),
             SizedBox(
               height: 20,
@@ -70,7 +71,7 @@ class _TvScreenState extends State<TvScreen> {
               controller: _controller,
               showVideoProgressIndicator: true,
               onReady: () {
-                print("im ready");
+                print("IM READY");
               },
               bottomActions: [
                 CurrentPosition(),
@@ -81,16 +82,16 @@ class _TvScreenState extends State<TvScreen> {
                       bufferedColor: Colors.greenAccent,
                       handleColor: Colors.black,
                       playedColor: Colors.blueGrey),
-                ),
+                )
               ],
             ),
             SizedBox(
-              height: 20,
+              height: 30,
             ),
             MyContainer(
               OnTap: () {},
               images:
-                  "https://thegadgetflow.com/wp-content/uploads/2022/03/Samsung-2022-Neo-QLED-Series-01.jpg",
+                  "http://images.summitmedia-digital.com/spotph/images/2021/11/22/samsung-soundtower-roadtest-640-1637582538.jpg",
             ),
             SizedBox(
               height: 20,
@@ -125,16 +126,42 @@ class _TvScreenState extends State<TvScreen> {
                 });
               },
             ),
+            RadioListTile(
+              title: Text(
+                "purpel",
+                style: TextStyle(fontSize: 20),
+              ),
+              value: "val",
+              groupValue: MyGroupVal,
+              onChanged: (value) {
+                setState(() {
+                  MyGroupVal = value.toString();
+                });
+              },
+            ),
+            RadioListTile(
+              title: Text(
+                "gold",
+                style: TextStyle(fontSize: 20),
+              ),
+              value: "va",
+              groupValue: MyGroupVal,
+              onChanged: (value) {
+                setState(() {
+                  MyGroupVal = value.toString();
+                });
+              },
+            ),
             Divider(
               height: 20,
             ),
             MyText(
                 MyFontFamily: "Combo-Regular",
                 MyTextSize: 40,
-                MyTextt: "Choose Screen Size :"),
+                MyTextt: "Choose the range of sound  :"),
             CheckboxListTile(
               title: Text(
-                "Size 55 inch",
+                " 250 metrs",
                 style: TextStyle(fontSize: 20),
               ),
               value: MyVal,
@@ -146,7 +173,7 @@ class _TvScreenState extends State<TvScreen> {
             ),
             CheckboxListTile(
               title: Text(
-                "Size 77 inch",
+                " 500 metrs",
                 style: TextStyle(fontSize: 20),
               ),
               value: myval,
